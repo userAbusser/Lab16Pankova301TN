@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .valid {
+            border: 2px solid green;
+        }
+
+        .invalid {
+            border: 2px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="text" data-length="5">
+    <input type="text" data-length="10">
+    <input type="text" data-length="7">
+
+    <script>
+        var inputs = document.querySelectorAll("input");
+
+        function validateInput(event) {
+            var input = event.target;
+            var expectedLength = parseInt(input.getAttribute("data-length"));
+            var actualLength = input.value.length;
+
+            if (actualLength === expectedLength) {
+                input.classList.remove("invalid");
+                input.classList.add("valid");
+            } else {
+                input.classList.remove("valid");
+                input.classList.add("invalid");
+            }
+        }
+
+        for (var i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener("blur", validateInput);
+        }
+    </script>
+</body>
+
+</html>

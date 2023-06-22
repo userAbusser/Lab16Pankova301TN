@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input1">
+    <input type="text" id="input2">
+    <input type="text" id="input3">
+    <p id="demo"></p>
+
+    <script>
+        var input1 = document.getElementById("input1");
+        var input2 = document.getElementById("input2");
+        var input3 = document.getElementById("input3");
+        var demo = document.getElementById("demo");
+
+        input1.addEventListener("blur", function () {
+            demo.innerText = input1.value;
+        });
+
+        input2.addEventListener("blur", function () {
+            demo.innerText = input2.value;
+        });
+
+        input3.addEventListener("blur", function () {
+            demo.innerText = input3.value;
+        });
+    </script>
+</body>
+
+</html>

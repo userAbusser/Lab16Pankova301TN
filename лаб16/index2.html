@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a href="#" id="link1">Посилання 1</a>
+    <a href="#" id="link2">Посилання 2</a>
+    <a href="#" id="link3">Посилання 3</a>
+
+    <script>
+        function addTitle(event) {
+            var link = event.target;
+            link.setAttribute("title", link.innerText);
+        }
+
+        function removeTitle(event) {
+            var link = event.target;
+            link.removeAttribute("title");
+        }
+
+        var link1 = document.getElementById("link1");
+        var link2 = document.getElementById("link2");
+        var link3 = document.getElementById("link3");
+
+        link1.addEventListener("mouseover", addTitle);
+        link1.addEventListener("mouseout", removeTitle);
+
+        link2.addEventListener("mouseover", addTitle);
+        link2.addEventListener("mouseout", removeTitle);
+
+        link3.addEventListener("mouseover", addTitle);
+        link3.addEventListener("mouseout", removeTitle);
+    </script>
+</body>
+
+</html>
